@@ -1,8 +1,8 @@
 <?php
     session_start();
     
-    $app_id = "509011619175617";
-    $app_secret = "226491c9633bf31817077cfde437fe0d";
+    $app_id = "717196078349659";
+    $app_secret = "c607c055db339ce1f71791217b295451";
     $redirect_uri = urlencode("http://localhost/fblogin/callback.php");    
     
     // Get code value
@@ -39,7 +39,10 @@
     // Log user in
     $_SESSION['user_login'] = true;
     $_SESSION['user_name'] = $user->username;
+    $_SESSION['access_token'] = $access_token->access_token;
     
+    echo "Wellcome ". $user->username ."!";  
+	 echo "Wellcome ". $access_token->access_token ."!"; 
     echo "Wellcome ". $user->username ."!";    
 
 ?>
